@@ -32,17 +32,17 @@ import java.util.Map;
 @EnableKafka
 public class KafkaConfiguration implements KafkaListenerConfigurer {
 
-    @Value(value = "${spring.kafka.bootstrap-servers}")
+    @Value("${spring.kafka.bootstrap-servers}")
     private String bootstrapServer;
 
-    @Value(value = "${spring.kafka.consumer.topic}")
+    @Value("${spring.kafka.consumer.topic}")
     private String consumerTopic;
 
     @Getter
-    @Value(value = "${spring.kafka.producer.topic}")
+    @Value("${spring.kafka.producer.topic}")
     private String producerTopic;
 
-    @Value(value = "${spring.kafka.consumer.group-id}")
+    @Value("${spring.kafka.consumer.group-id}")
     private String consumerGroupId;
 
     @Autowired
