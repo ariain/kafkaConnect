@@ -2,8 +2,8 @@ package com.connector.kafkaconnect;
 
 import com.connector.kafkaconnect.producer.Producer;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,13 +14,15 @@ import java.util.concurrent.ExecutionException;
 
 @SpringBootApplication
 @RestController
-public class KafkaConnectApplication {
+public class Connect {
 
     @Autowired
     private Producer producer;
 
     public static void main(String[] args) {
-        SpringApplication.run(KafkaConnectApplication.class, args);
+        new SpringApplicationBuilder()
+                .sources(Connect.class)
+                .run(args);
     }
 
     @PostMapping("/sendMessage")

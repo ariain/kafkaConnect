@@ -1,4 +1,4 @@
-package com.connector.kafkaconnect;
+package com.connector.kafkaconnect.configuration;
 
 import com.connector.kafkaconnect.consumer.Consumer;
 import com.connector.kafkaconnect.producer.DefaultProducerListener;
